@@ -12,7 +12,7 @@ conexion.connect((error) => {
     if (error) {
         console.error('Error de conexión a MySQL:', error);
     } else {
-        console.log('Conexión exitosa a la Base de Datos Motos');
+        console.log('Conexión exitosa a la Base de Datos Motos de Infinity Free');
     }
 });
 
