@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt'); // Importa bcrypt para encriptar la contraseña
+const bcrypt = require('bcryptjs'); // Importa bcrypt para encriptar la contraseña
 const db = require('../configuracion/conexion'); // Conexión a la base de datos
 
 // Función para obtener un usuario por su ID
