@@ -136,5 +136,7 @@ app.use('/api', eliminarProveedorRuta); // Sirve la ruta bajo el prefijo /api
 const PORT = process.env.PORT || 4000;  // Usa el puerto de Render o 4000 si no está definido
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Servidor en ejecución en el puerto ${PORT}`);
+    
+    console.log(`NODE_ENV: ${process.env.NODE_ENV}`); // Verifica el entorno
 });
 
