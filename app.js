@@ -31,8 +31,8 @@ const insertarClienteRuta = require('./rutas/insertarClienteRuta');
 const insertaProveedorRuta = require('./rutas/insertarProveedorRuta');
 
 //CONFIGURACIONES GENERALES:
-//app.use(cors());//Configuración vulnerable->Revisar mas adelante.
-app.use(cors(corsOptions)); 
+app.use(cors());//Configuración vulnerable->Revisar mas adelante.
+//app.use(cors(corsOptions)); 
 
 // Permite que el backend reciba datos en formato JSON
 app.use(express.json());
@@ -59,11 +59,12 @@ app.use((err, req, res, next) => {
 });
 
 //middleware temporal
-app._router.stack.forEach((middleware) => {
-    if (middleware.route) { // Si es una ruta
-        console.log(middleware.route.path);
-    }
-});
+
+app.use((req, res, next) => {
+    console.log(`Recibiendo solicitud en: ${req.method} ${req.url}`);
+    next();
+  });
+  
 
 
 
@@ -128,7 +129,7 @@ app.use('/api', eliminarClienteRuta); // Sirve la ruta bajo el prefijo /api
 app.use('/api', eliminarProveedorRuta); // Sirve la ruta bajo el prefijo /api
 
 //Iniciamos el servidor en el puerto específico:
-const PORT = process.env.PORT || 1000;  // Usa el puerto de Render o 4000 si no está definido
+const PORT = process.env.PORT || 4000;  // Usa el puerto de Render o 4000 si no está definido
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Servidor en ejecución en el puerto ${PORT}`);
 
