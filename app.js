@@ -40,6 +40,8 @@ require('dotenv').config();
 
 //___________CÓDIGO EN PRUEBA__________________________>>>>>>>
 
+const createError = require('http-errors');
+
 app.use((req, res, next) => {
     next(createError(404));
 });
