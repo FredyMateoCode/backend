@@ -70,46 +70,46 @@ app.use((err, req, res, next) => {
 app.use('/autenticarUsuarios', autenticarUsuarioRuta);
 
 //Ruta para mostrar Usuarios:
-app.use('/mostrarUsuarios', mostrarUsuariosRuta);
+app.use('https://backend-mc1q.onrender.com/mostrarUsuarios', mostrarUsuariosRuta);
 
 //Ruta para mostrar Clientes:
-app.use('/mostrarClientes', mostrarClientesRuta);
+app.use('https://backend-mc1q.onrender.com/mostrarClientes', mostrarClientesRuta);
 
 //Ruta para mostrar Clientes:
-app.use('/mostrarProveedores', mostrarProveedoresRuta);
+app.use('https://backend-mc1q.onrender.com/mostrarProveedores', mostrarProveedoresRuta);
 
 //Ruta para insertar usuario:
-app.use('/api', insertarUsuarioRuta);
+app.use('https://backend-mc1q.onrender.com/api', insertarUsuarioRuta);
 
 //Ruta para actualizar Usuario (Registrar la ruta para mostrar y actualizar usuarios)
-app.use('/api', actualizarUsuarioRuta);
+app.use('https://backend-mc1q.onrender.com/api', actualizarUsuarioRuta);
 
 //Ruta para eliminar usuario
-app.use('/api', eliminarUsuarioRuta);
+app.use('https://backend-mc1q.onrender.com/api', eliminarUsuarioRuta);
 
 //Ruta para obtener registro con promesa de id en el modelo y pasar al front end en formato JSON
-app.use('/api', obtenerClientePorIdruta); // Prefijo para las rutas relacionadas con clientes
+app.use('https://backend-mc1q.onrender.com/api', obtenerClientePorIdruta); // Prefijo para las rutas relacionadas con clientes
 
 //Ruta para actualizar cliente.
-app.use('/clientes', actualizarClienteRoutes);
+app.use('https://backend-mc1q.onrender.com/clientes', actualizarClienteRoutes);
 
 //Ruta para obtener proveedor a partir de id_prov con promesa.
-app.use('/api', obtenerProveedorPorIdruta);
+app.use('https://backend-mc1q.onrender.com/api', obtenerProveedorPorIdruta);
 
 //Ruta para actualizar Proveedor.
-app.use('/proveedores', actualizarProveedorRuta); // Configura la ruta base
+app.use('https://backend-mc1q.onrender.com/proveedores', actualizarProveedorRuta); // Configura la ruta base
 
 // Agregar la ruta de insertar CLIENTE
-app.use('/api', insertarClienteRuta);
+app.use('https://backend-mc1q.onrender.com/api', insertarClienteRuta);
 
 // Agregar la ruta de insertar PROVEEDOR
-app.use('/api', insertaProveedorRuta);
+app.use('https://backend-mc1q.onrender.com/api', insertaProveedorRuta);
 
 //Ruta para eliminar cliente
-app.use('/api', eliminarClienteRuta); // Sirve la ruta bajo el prefijo /api
+app.use('https://backend-mc1q.onrender.com/api', eliminarClienteRuta); // Sirve la ruta bajo el prefijo /api
 
 //Ruta para eliminar proveedor
-app.use('/api', eliminarProveedorRuta); // Sirve la ruta bajo el prefijo /api
+app.use('https://backend-mc1q.onrender.com/api', eliminarProveedorRuta); // Sirve la ruta bajo el prefijo /api
 
 //Iniciamos el servidor en el puerto específico:
 const PORT = process.env.PORT || 4000;  // Usa el puerto de Render o 4000 si no está definido
