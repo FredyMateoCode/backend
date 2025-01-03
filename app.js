@@ -61,17 +61,19 @@ app.use((err, req, res, next) => {
 //middleware temporal
 
 app.use((req, res, next) => {
-    console.log(`Recibiendo solicitud en: ${req.method} ${req.url}`);
+    console.log(`Solicitud recibida: ${req.method} ${req.url}`);
     next();
   });
+  
   
 
 
 
 //Ruta temporal de pruba
 app.get('/test', (req, res) => {
-    res.json({ mensaje: "Backend accesible desde Render" });
-});
+    res.json({ message: 'Ruta de prueba funcionando' });
+  });
+  
 
 
 
@@ -129,7 +131,7 @@ app.use('/api', eliminarClienteRuta); // Sirve la ruta bajo el prefijo /api
 app.use('/api', eliminarProveedorRuta); // Sirve la ruta bajo el prefijo /api
 
 //Iniciamos el servidor en el puerto específico:
-const PORT = process.env.PORT || 4000;  // Usa el puerto de Render o 4000 si no está definido
+const PORT = process.env.PORT || 1000;  // Usa el puerto de Render o 4000 si no está definido
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Servidor en ejecución en el puerto ${PORT}`);
 
