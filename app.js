@@ -60,16 +60,11 @@ app.use((err, req, res, next) => {
 
 //middleware temporal
 app._router.stack.forEach((middleware) => {
-    if (middleware.route) {
-        console.log(middleware.route);
-    } else if (middleware.name === 'router') {
-        middleware.handle.stack.forEach((handler) => {
-            if (handler.route) {
-                console.log(handler.route);
-            }
-        });
+    if (middleware.route) { // Si es una ruta
+        console.log(middleware.route.path);
     }
 });
+
 
 
 //Ruta temporal de pruba
@@ -133,10 +128,10 @@ app.use('/api', eliminarClienteRuta); // Sirve la ruta bajo el prefijo /api
 app.use('/api', eliminarProveedorRuta); // Sirve la ruta bajo el prefijo /api
 
 //Iniciamos el servidor en el puerto específico:
-const PORT = process.env.PORT || 4000;  // Usa el puerto de Render o 4000 si no está definido
+const PORT = process.env.PORT || 1000;  // Usa el puerto de Render o 4000 si no está definido
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Servidor en ejecución en el puerto ${PORT}`);
-    
+
     console.log(`NODE_ENV: ${process.env.NODE_ENV}`); // Verifica el entorno
 });
 
