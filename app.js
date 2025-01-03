@@ -1,12 +1,6 @@
 //IMPORTACIÓN DE LIBRERÍAS:
 const express = require('express');//Importamos el framework express para el manejo de rutas y crear el servidor.
 const app = express(); //Instancia para crear el servidor y el manejo de rutas.
-const cors = require('cors');//Para manejar solicitudes de diferentes dominios, como mecanismo de seguridad.
-const corsOptions = {
-    origin: 'https://frontend-1szo.onrender.com',  // URL de tu frontend en Render
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-};
 const bodyParser = require('body-parser');//Para analizar los cuerpos HTTP en formato JSON - POST.
 
 //IMPORTACIÓN DE RUTAS Y OTROS
@@ -55,6 +49,14 @@ app.use((err, req, res, next) => {
     });
 });
 
+
+const cors = require('cors');//Para manejar solicitudes de diferentes dominios, como mecanismo de seguridad.
+const corsOptions = {
+    //origin: 'https://frontend-1szo.onrender.com',  // URL de tu frontend en Render
+    origin: '*',  // URL de tu frontend en Render
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+};
 
 
 
