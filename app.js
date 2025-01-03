@@ -72,6 +72,12 @@ app._router.stack.forEach((middleware) => {
 });
 
 
+//Ruta temporal de pruba
+app.get('/test', (req, res) => {
+    res.json({ mensaje: "Backend accesible desde Render" });
+});
+
+
 
 
 
