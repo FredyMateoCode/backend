@@ -45,18 +45,6 @@ require('dotenv').config();
 
 const createError = require('http-errors');
 
-app.use((req, res, next) => {
-    next(createError(404));
-});
-
-// Manejador de errores
-app.use((err, req, res, next) => {
-    res.status(err.status || 500);
-    res.json({
-        message: err.message,
-        error: err
-    });
-});
 
 //middleware temporal
 
@@ -129,6 +117,32 @@ app.use('/api', eliminarClienteRuta); // Sirve la ruta bajo el prefijo /api
 
 //Ruta para eliminar proveedor
 app.use('/api', eliminarProveedorRuta); // Sirve la ruta bajo el prefijo /api
+
+//___________CÓDIGO EN PRUEBA__________________________>>>>>>>
+
+
+app.use((req, res, next) => {
+    next(createError(404));
+});
+
+// Manejador de errores
+app.use((err, req, res, next) => {
+    res.status(err.status || 500);
+    res.json({
+        message: err.message,
+        error: err
+    });
+});
+
+
+
+
+
+
+
+
+
+//___________CÓDIGO EN PRUEBA__________________________<<<<<<<
 
 //Iniciamos el servidor en el puerto específico:
 const PORT = process.env.PORT || 1000;  // Usa el puerto de Render o 4000 si no está definido
